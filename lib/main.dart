@@ -7,17 +7,20 @@ import 'imagePage.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
+      
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   @override
+  
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -46,9 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
         //   MaterialPageRoute(builder: (context)=> SecondPage(collect: _myActivity))
         // );
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => addImage(collect: _myActivity)));
+          context,
+          MaterialPageRoute(builder: (context)=> addImage(collect: _myActivity))
+        );
+
       });
     }
   }
@@ -59,10 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
         elevation: 20.0,
-        title: Text(
-          'Register Yourself',
-          style: GoogleFonts.robotoCondensed(color: Colors.black),
-        ),
+        title: Text('Register Yourself',style: GoogleFonts.robotoCondensed(color:Colors.black),),
       ),
       body: Center(
         child: Form(
@@ -79,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onSaved: (value) {
                     setState(() {
                       _myActivity = value;
-                      _myActivityResult = 'You are ' + _myActivity;
+                      _myActivityResult = 'You are '+_myActivity;
 
                       // _saveForm();
                     });
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onChanged: (value) {
                     setState(() {
                       _myActivity = value;
-                      _myActivityResult = 'You are ' + _myActivity;
+                      _myActivityResult = 'You are '+_myActivity;
                       // _saveForm();
                     });
                   },
@@ -120,15 +121,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: EdgeInsets.all(8),
                 child: FloatingActionButton.extended(
-                  label: Text(
-                    'Next',
-                    style: GoogleFonts.robotoCondensed(
-                        color: Colors.white, fontSize: 20.0),
-                  ),
+                  label: Text('Next', style: GoogleFonts.robotoCondensed(color: Colors.white,fontSize: 20.0),),
                   onPressed: _saveForm,
                   icon: Icon(Icons.arrow_forward_ios),
                 ),
               ),
+              
             ],
           ),
         ),
